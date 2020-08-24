@@ -4,3 +4,5 @@
 
 Input: array
 Output: same array reversed 
+
+![Whiteboard](../../assets/diagram.png)
