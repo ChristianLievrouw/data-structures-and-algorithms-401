@@ -4,6 +4,7 @@
 
 Input: array
 <<<<<<< HEAD
+<<<<<<< HEAD
 Output: same array reversed
 
 ![Whiteboard 01](../../assets/diagram.png)
@@ -19,3 +20,8 @@ Output: same array reversed
 
 ![Whiteboard](../../assets/diagram.png)
 >>>>>>> origin
+=======
+Output: same array reversed 
+
+![Whiteboard](../../assets/diagram.png)
+>>>>>>> master
