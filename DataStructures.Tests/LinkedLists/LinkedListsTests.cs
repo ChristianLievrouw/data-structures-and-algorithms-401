@@ -52,5 +52,23 @@ namespace DataStructures.Tests.LinkedLists
             bool expected = true;
             Assert.Equal(list.Includes(4), expected);
         }
+
+        [Fact]
+        public void Includes_finds_input_not_in_list()
+        {
+            //Arrange
+            LinkedList list = new LinkedList();
+
+            //Act
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+            list.Insert(5);
+
+            //Assert
+            bool expected = false;
+            Assert.Equal(list.Includes(7), expected);
+        }
     }
 }
