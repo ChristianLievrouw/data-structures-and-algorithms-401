@@ -83,6 +83,30 @@ namespace DataStructures.LinkedLists
             }
         }
 
+        public int Search(int value)
+        {
+            Node current = Head;
+            int count = 0;
+
+            while (current != null)
+            {
+                count++;
+                current = current.Next;
+            }
+
+            if(value > count)
+            {
+                throw new NullReferenceException();
+            }
+
+            current = Head;
+            for(int i = 0; i < count - value; i++)
+            {
+                current = current.Next;
+            }
+            return current.Value; 
+        }
+
         public override string ToString()
         {
             Node current = Head;

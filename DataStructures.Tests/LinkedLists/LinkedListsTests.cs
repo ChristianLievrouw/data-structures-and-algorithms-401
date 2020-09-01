@@ -123,5 +123,50 @@ namespace DataStructures.Tests.LinkedLists
             // Assert
             Assert.Equal("{ 1 } -> { 2 } -> { 5 } -> { 3 } -> NULL", list.ToString());
         }
+
+        [Fact]
+        public void Search_at_kValue_from_end()
+        {
+            LinkedList list = new LinkedList();
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.Insert(7);
+            list.Insert(8);
+            list.Insert(9);
+
+            int result = list.Search(4);
+
+            Assert.Equal(4, result);
+        }
+
+        [Fact]
+        public void Search_at_kValue_if_empty_list()
+        {
+            LinkedList list = new LinkedList();
+
+            Assert.Throws<NullReferenceException>(() =>
+            {
+                //Act
+                return list.Search(3);
+            }); 
+        }
+
+        [Fact]
+        public void Search_list_with_one_node()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+
+            Assert.Throws<NullReferenceException>(() =>
+            {
+                //Act
+                return list.Search(3);
+            });
+        }
     }
 }

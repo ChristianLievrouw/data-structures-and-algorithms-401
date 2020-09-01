@@ -35,3 +35,31 @@ Output: The output will be the umber if it is located in the array otherwise it 
 - [x] Will return true when finding a value within the linked list that exists
 - [x] Will return false when searching for a value in the linked list that does not exist
 - [x] Can properly return a collection of all the values that exist in the linked list
+
+5. LinkedList AddBefore, AddAfter, AppendToEnd
+
+# Challenge Summary
+In this code challenge we had to:
+1. append a node to the end of the linked list
+2. add a new node before a given node
+3. add a new node after a given node
+
+## Approach & Efficiency
+Took existing challenges to help understand the flow and how to set and chnage position on new node
+
+## Solution
+
+![Append, Before, After](./Assets/appendBeforeAfter.png)
+![Append, Before, After](./Assets/cChalSix.png)
+
+# Challenge Summary
+In this code challenge we had to:
+1. user gives a number to search that many nodes from the end
+2. then loop through again and print the value of that node
+
+## Approach & Efficiency
+started by looping through list to find the length and then took the length minus the inout value to go through the list again that many times
+
+## Solution
+
+![find value of k](./Assets/findValueOfK.png)
