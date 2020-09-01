@@ -63,3 +63,4 @@ started by looping through list to find the length and then took the length minu
 ## Solution
 
 ![find value of k](./Assets/findValueOfK.png)
+![Whiteboard](./Assets/WhiteboardOfK.png)
