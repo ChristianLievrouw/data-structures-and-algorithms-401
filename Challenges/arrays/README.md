@@ -51,3 +51,15 @@ Took existing challenges to help understand the flow and how to set and chnage p
 
 ![Append, Before, After](./Assets/appendBeforeAfter.png)
 ![Append, Before, After](./Assets/cChalSix.png)
+
+# Challenge Summary
+In this code challenge we had to:
+1. user gives a number to search that many nodes from the end
+2. then loop through again and print the value of that node
+
+## Approach & Efficiency
+started by looping through list to find the length and then took the length minus the inout value to go through the list again that many times
+
+## Solution
+
+![find value of k](./Assets/findValueOfK.png)

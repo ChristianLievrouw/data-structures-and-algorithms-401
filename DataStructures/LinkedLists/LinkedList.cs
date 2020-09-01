@@ -94,6 +94,11 @@ namespace DataStructures.LinkedLists
                 current = current.Next;
             }
 
+            if(value > count)
+            {
+                throw new NullReferenceException();
+            }
+
             current = Head;
             for(int i = 0; i < count - value; i++)
             {
