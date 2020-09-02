@@ -64,3 +64,16 @@ started by looping through list to find the length and then took the length minu
 
 ![find value of k](./Assets/findValueOfK.png)
 ![Whiteboard](./Assets/WhiteboardOfK.png)
+
+# Challenge Summary
+In this code challenge we had to:
+1. Take in 2 different linked list
+2. Filled new linked list with alternating values from each list
+
+## Approach & Efficiency
+Bring in both linked list then iterated over both and take one from each from each pass through and fill in the new empty list
+
+## Solution
+
+![linked list](./Assets/Zipper.png)
+![linked list](./Assets/ZipperScreenShot.png)
