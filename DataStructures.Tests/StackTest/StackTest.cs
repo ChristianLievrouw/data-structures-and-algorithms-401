@@ -65,15 +65,61 @@ namespace DataStructures.Tests.StackTest
             //Assert
             Assert.Equal(2, stack.Peek());
             Assert.Equal(1, result);
+        }
 
+        [Fact]
+        public void Error_throws_if_pop_empty_stack()
+        {
+            Stack<int> stack = new Stack<int>();
 
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                //Act
+                return stack.Pop();
+            });
+        }
+
+        [Fact]
+        public void Pop_more_than_one()
+        {
+            // Arrange
+            Stack<int> stack = new Stack<int>();
+            stack.Push(3);
+            stack.Push(2);
+            stack.Push(1);
+
+            //Act
+            int result = stack.Pop();
+            int result2 = stack.Pop();
+            int result3 = stack.Pop();
+
+            //Assert
+            Assert.Equal(1, result);
+            Assert.Equal(2, result2);
+            Assert.Equal(3, result3);
+
+            bool boolResult = stack.IsEmpty();
+
+            Assert.True(boolResult);
+        }
+
+        [Fact]
+        public void Peek_on_empty_stack()
+        {
+            Stack<int> stack = new Stack<int>();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                //Act
+                return stack.Peek();
+            });
         }
     }
 
     public class QueueTest
     {
         [Fact]
-        public void IsEmpty_returns_true_if_queue_is_empty()
+        public void QIsEmpty_returns_true_if_queue_is_empty()
         {
             // Arrange 
             Queue<int> queue = new Queue<int>();
@@ -111,7 +157,7 @@ namespace DataStructures.Tests.StackTest
 
             int result = queue.Dequeue();
 
-            
+
             Assert.Equal(1, result);
         }
 
@@ -129,5 +175,29 @@ namespace DataStructures.Tests.StackTest
             Assert.Equal(1, result);
         }
 
+        [Fact]
+        public void Error_throws_if_Dequeue_on_empty_queue()
+        {
+            Queue<int> queue = new Queue<int>();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                //Act
+                return queue.Dequeue();
+            });
+        }
+
+        [Fact]
+        public void QPeek_on_empty_queue()
+        {
+            Queue<int> queue = new Queue<int>();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                //Act
+                return queue.QPeek();
+            });
+
+        }
     }
 }
