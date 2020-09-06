@@ -3,63 +3,70 @@ using System.Collections.Generic;
 
 namespace DataStructures.Stack
 {
-   
- 
-        public class Stack<T>
+
+
+    public class Stack<T>
+    {
+        public class Node
         {
-            public class Node
+
+            public Node(T value)
             {
-
-                public Node(T value)
-                {
-                    Value = value;
-                }
-
-                // Value of this node
-                public T Value { get; set; }
-
-                // Pointer to the next node in the list
-                public Node Next { get; set; }
+                Value = value;
             }
 
-            public Node Top { get; set; }
+            // Value of this node
+            public T Value { get; set; }
 
-            public void Push(T value)
+            // Pointer to the next node in the list
+            public Node Next { get; set; }
+        }
+
+        public Node Top { get; set; }
+
+        public void Push(T value)
+        {
+            Node node = new Node(value);
+            node.Next = Top;
+            Top = node;
+        }
+
+        public T Pop()
+        {
+            if (Top == null)
             {
-                Node node = new Node(value);
-                node.Next = Top;
-                Top = node;
+                throw new InvalidOperationException();
             }
-
-            public T Pop()
+            else
             {
                 Node temp = Top;
                 Top = temp.Next;
                 temp.Next = null;
                 return temp.Value;
             }
-
-            public T Peek()
-            {
-                if (Top == null)
-                {
-                    throw new InvalidOperationException();
-                }
-                else
-                    return Top.Value;
-            }
-
-            public bool IsEmpty()
-            {
-                if (Top == null)
-                {
-                    return true;
-                }
-
-                else
-                    return false;
-            }
         }
+
+        public T Peek()
+        {
+            if (Top == null)
+            {
+                throw new InvalidOperationException();
+            }
+            else
+                return Top.Value;
+        }
+
+        public bool IsEmpty()
+        {
+            if (Top == null)
+            {
+                return true;
+            }
+
+            else
+                return false;
+        }
+    }
     public class Queue<T>
     {
         public class Node
@@ -99,11 +106,19 @@ namespace DataStructures.Stack
 
         public T Dequeue()
         {
-            Node temp = Front;
-            Front = Front.Next;
-            temp.Next = null;
+            if (Front == null)
+            {
+                throw new InvalidOperationException();
+            }
+            else
+            {
+                Node temp = Front;
+                Front = Front.Next;
+                temp.Next = null;
 
-            return temp.Value;
+                return temp.Value;
+            }
+
         }
 
         public T QPeek()
