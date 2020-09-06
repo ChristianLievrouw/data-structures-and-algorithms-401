@@ -77,3 +77,20 @@ Bring in both linked list then iterated over both and take one from each from ea
 
 ![linked list](./Assets/Zipper.png)
 ![linked list](./Assets/ZipperScreenShot.png)
+
+# Challenge Summary
+In this code challenge we had to:
+1. Use Stacks
+2. Create tests to be able to Push, Pop, Peek, IsEmpty on the stacks
+3. Use Queues
+4. Create tests to be able to Enqueue, Dequeue, Peek, IsEmpty on the queue
+
+## Approach & Efficiency
+Create both a Stack and a Queue then write tests to prove functinality
+
+## Solution
+
+![Stacks and Queue](./Assets/stacksAndQueue.png)
+
+
+
