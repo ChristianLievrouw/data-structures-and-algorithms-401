@@ -19,5 +19,6 @@
   <ItemGroup>
     <Folder Include="arrays\" />
     <Folder Include="LinkedListTest\" />
+    <Folder Include="QueueWithStacks\" />
   </ItemGroup>
 </Project>

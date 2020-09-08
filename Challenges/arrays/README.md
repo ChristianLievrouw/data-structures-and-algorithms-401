@@ -93,4 +93,12 @@ Create both a Stack and a Queue then write tests to prove functinality
 ![Stacks and Queue](./Assets/stacksAndQueue.png)
 
 
+# Challenge Summary
+Create a stack that acts like a queue 
 
+## Challenge Description
+Create two stacks and when a new value is added to the stack take the existigng values pop them into the new stack and then add new value to first stack and then pop all the values from stack two back on to stack one 
+
+## Solution
+
+![QueueWithStacks](./Assets/queueWithStacks.png)
