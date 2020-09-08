@@ -4,10 +4,10 @@ using DataStructures.Stack;
 
 namespace Challenges.QueueWithStacks
 {
-    public class QueueWithStacks<T> : Stack<T>
+    public class QueueWithStacks<T>
     {
-        Stack<int> stack = new Stack<int>();
-        Stack<int> stack2 = new Stack<int>();
+        Stack<T> stack = new Stack<T>();
+        Stack<T> stack2 = new Stack<T>();
 
         public void Enqueue(T value)
         {
@@ -16,7 +16,7 @@ namespace Challenges.QueueWithStacks
                 stack2.Push(stack.Pop());
 
             }
-            stack.Push(4);
+            stack.Push(value);
 
             while (stack2.IsEmpty() != true)
             {
@@ -24,31 +24,28 @@ namespace Challenges.QueueWithStacks
             }
         }
 
-        public int Dequeue()
+        public T Dequeue()
         {
             if (stack.IsEmpty())
             {
-                Console.WriteLine("Stack is empty");
+                throw new InvalidOperationException();
             }
 
-            int value = stack.Peek();
-            stack.Pop();
+            T value = stack.Pop();
             return value;
         }
 
-        public class Node
+        public bool IsEmpty()
         {
+            if(stack.IsEmpty() || stack2.IsEmpty())
+                return true;
+            else
+                return false;
+        }
 
-            public Node(int value)
-            {
-                Value = value;
-            }
-
-            // Value of this node
-            public int Value { get; set; }
-
-            // Pointer to the next node in the list
-            public Node Next { get; set; }
+        public T Peek()
+        {
+            return stack.Peek();
         }
     }
 }

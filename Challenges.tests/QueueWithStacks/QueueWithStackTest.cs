@@ -11,37 +11,68 @@ namespace Challenges.tests.QueueWithStacks
         public void IsEmpty_returns_true_if_stack_is_empty()
         {
             // Arrange 
-            Stack<int> stack = new Stack<int>();
+            QueueWithStacks<int> queue = new QueueWithStacks<int>();
 
             // Act
-            bool result = stack.IsEmpty();
+            bool result = queue.IsEmpty();
 
             // Assert
             Assert.True(result);
-
         }
-        //[Fact]
-        //public void Dequeue_a_stack()
-        //{
-        //    Stack<int> stack = new Stack<int>();
 
-        //    stack.Push(3);
-        //    stack.Push(2);
-        //    stack.Push(1);
+        [Fact]
+        public void IsEmpty_returns_false_if_stack_is_not_empty()
+        {
+            // Arrange 
+            QueueWithStacks<int> queue = new QueueWithStacks<int>();
 
-        //    Stack<int> stack2 = new Stack<int>();
+            queue.Enqueue(1);
 
-        //    Assert.Equal(3, stack2.Peek());
-        //}
+            // Act
+            bool result = queue.IsEmpty();
 
-        //[Fact]
-        //public void Enqueue_a_stack()
-        //{
-        //    Stack<int> stack = new Stack<int>();
+            // Assert
+            Assert.True(result);
+        }
 
-        //    stack.Push(3);
-        //    stack.Push(2);
-        //    stack.Push(1);
-        //}
+        [Fact]
+        public void Peek_bottom_of_queue()
+        {
+            // Arrange 
+            QueueWithStacks<int> queue = new QueueWithStacks<int>();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+
+            // Assert
+            Assert.Equal(1, queue.Peek());
+        }
+
+        [Fact]
+        public void Dequeue_from_stack()
+        {
+            QueueWithStacks<int> queue = new QueueWithStacks<int>();
+
+            queue.Enqueue(1);
+
+            int result = queue.Dequeue();
+
+            Assert.Equal(1, result);
+        }
+
+        [Fact]
+        public void Dequeue_from_empty_stack()
+        {
+            QueueWithStacks<int> queue = new QueueWithStacks<int>();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                //Act
+                return queue.Dequeue();
+            });
+        }
     }
 }
