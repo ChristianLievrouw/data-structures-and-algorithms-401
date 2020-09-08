@@ -8,6 +8,7 @@
   <ItemGroup>
     <Folder Include="arrays\" />
     <Folder Include="LinkLists\" />
+    <Folder Include="QueueWithStacks\" />
   </ItemGroup>
 
   <ItemGroup>
