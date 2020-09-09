@@ -147,19 +147,19 @@ namespace DataStructures.Tests.StackTest
 
         }
 
-        [Fact]
-        public void Dequeue_takes_off_front_node()
-        {
-            Queue<int> queue = new Queue<int>();
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
+        //[Fact]
+        //public void Dequeue_takes_off_front_node()
+        //{
+        //    Queue<int> queue = new Queue<int>();
+        //    queue.Enqueue(1);
+        //    queue.Enqueue(2);
+        //    queue.Enqueue(3);
 
-            int result = queue.Dequeue();
+        //    int result = queue.Dequeue();
 
 
-            Assert.Equal(1, result);
-        }
+        //    Assert.Equal(1, result);
+        //}
 
         [Fact]
         public void Peek_look_at_front_value()
@@ -175,17 +175,17 @@ namespace DataStructures.Tests.StackTest
             Assert.Equal(1, result);
         }
 
-        [Fact]
-        public void Error_throws_if_Dequeue_on_empty_queue()
-        {
-            Queue<int> queue = new Queue<int>();
+        //[Fact]
+        //public void Error_throws_if_Dequeue_on_empty_queue()
+        //{
+        //    Queue<int> queue = new Queue<int>();
 
-            Assert.Throws<InvalidOperationException>(() =>
-            {
-                //Act
-                return queue.Dequeue();
-            });
-        }
+        //    Assert.Throws<InvalidOperationException>(() =>
+        //    {
+        //        //Act
+        //        return queue.Dequeue();
+        //    });
+        //}
 
         [Fact]
         public void QPeek_on_empty_queue()
