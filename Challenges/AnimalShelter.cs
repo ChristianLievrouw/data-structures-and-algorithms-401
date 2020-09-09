@@ -36,7 +36,6 @@ namespace Challenges
             //    }
             //    current = current.Next;
             //}
-            //return default;
             if (pref == Animal.Type.Cat || pref == Animal.Type.Dog)
             {
                 return queue.Dequeue();
