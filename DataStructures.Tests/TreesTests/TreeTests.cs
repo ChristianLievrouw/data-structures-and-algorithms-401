@@ -1,5 +1,6 @@
 ﻿using System;
 using DataStructures.Trees;
+
 using Xunit;
 
 namespace DataStructures.Tests.TreesTests
