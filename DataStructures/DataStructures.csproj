@@ -6,5 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Stack\" />
+    <Folder Include="Trees\" />
   </ItemGroup>
 </Project>
