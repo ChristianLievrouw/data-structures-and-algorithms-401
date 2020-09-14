@@ -17,9 +17,9 @@ namespace DataStructures.Trees
         public Node Right { get; set; }
     }
 
-    public class BinarySearchTree
+    public class BinarySearchTree : BinaryTree
     {
-        public Node Root { get; set; }
+        //public Node Root { get; set; }
 
         public void Add(int value)
         {
@@ -68,6 +68,24 @@ namespace DataStructures.Trees
                 else
                     return Contains(current.Right, value);
             }
+        }
+
+        public int FindMax(Node root)
+        {
+            if (Root == null)
+                return 0;
+
+            int topResult = Root.Value;
+
+            int leftResult = FindMax(root.Left);
+            int rightResult = FindMax(root.Right);
+
+            if (leftResult > topResult)
+                topResult = leftResult;
+            if (rightResult > topResult)
+                topResult = rightResult;
+
+            return topResult;
         }
     }
 }
