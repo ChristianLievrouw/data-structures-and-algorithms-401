@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 namespace DataStructures.Trees
 {
-    public class BinaryTree
+    public class BinaryTree 
     {
+        public Node Root { get; set; }
+
         public IEnumerable<int> PreOrder()
         {
             List<int> result = new List<int>();
@@ -62,23 +64,21 @@ namespace DataStructures.Trees
             return result;
         }
 
-        //public int FindMax(Node root)
-        //{
-        //    if (Root == null)
-        //        return 0;
+        public IEnumerable<int> BreadthFirst()
+        {
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(this.Root);
 
-        //    int topResult = Root.Value;
-
-        //    int leftResult = FindMax(root.Left);
-        //    int rightResult = FindMax(root.Right);
-
-        //    if (leftResult > topResult)
-        //        topResult = leftResult;
-        //    if (rightResult > topResult)
-        //        topResult = rightResult;
-
-        //    return topResult;
-        //}
+            while (queue.Count > 0)
+            {
+                Node current = queue.Dequeue();
+                yield return current.Value;
+                if (current == null)
+                    continue;
+                queue.Enqueue(current.Left);
+                queue.Enqueue(current.Right);
+            }
+        }
 
         public class Node
         {
@@ -93,6 +93,5 @@ namespace DataStructures.Trees
 
             public Node Right { get; set; }
         }
-        public Node Root { get; set; }
     }
 }

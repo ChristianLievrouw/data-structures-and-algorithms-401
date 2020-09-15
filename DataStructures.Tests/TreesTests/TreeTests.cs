@@ -19,5 +19,22 @@ namespace DataStructures.Tests.TreesTests
             Assert.Equal(6, tree.Root.Value);
            
         }
+
+        [Fact]
+        public void Breadth_first_test()
+        {
+            BinaryTree tree = new BinaryTree();
+            tree.Root = new BinaryTree.Node(1);
+            tree.Root.Left = new BinaryTree.Node(2);
+            tree.Root.Right = new BinaryTree.Node(3)
+            {
+                Left = new BinaryTree.Node(4),
+                Right = new BinaryTree.Node(5),
+            };
+
+            var result = tree.BreadthFirst();
+           
+            Assert.Empty(result);
+        }
     }
 }
