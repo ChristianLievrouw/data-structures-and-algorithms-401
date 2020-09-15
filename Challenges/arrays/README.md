@@ -99,3 +99,12 @@ Create a queue to hold cats and dogs and are able to dequeue a cat or a dog
 ## Solution
 
 ![CatDog](./Assets/catDog.png)
+
+# Challenge Summary
+Creat a binary tree and then use Breadth Search to tull the vaues from each row left to right
+
+## Solution
+Breadth First
+Breadth first traversal iterates through the tree by going through each level of the tree node-by-node.
+
+![BreadthSearch](./Assets/BreadthSearch.png)
