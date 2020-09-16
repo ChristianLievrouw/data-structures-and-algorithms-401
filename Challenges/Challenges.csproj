@@ -9,6 +9,7 @@
     <Folder Include="arrays\" />
     <Folder Include="LinkLists\" />
     <Folder Include="QueueWithStacks\" />
+    <Folder Include="FizzBizz\" />
   </ItemGroup>
 
   <ItemGroup>
