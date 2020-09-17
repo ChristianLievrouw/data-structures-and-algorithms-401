@@ -2,17 +2,17 @@
 
 namespace DataStructures
 {
-    class Node<T>
+    public class Node
     {
-        public Node(T value)
+        public Node(int value)
         {
             Value = value;
         }
 
-        public T Value { get; set; }
+        public int Value { get; set; }
 
-        public Node<T> Left { get; set; }
+        public Node Next { get; set; }
 
-        public Node<T> Right { get; set; }
+   
     }
 }
