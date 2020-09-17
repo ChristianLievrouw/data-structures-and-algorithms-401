@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 namespace DataStructures.Trees
 {
-    public class BinaryTree 
+    public class BinaryTree<T>
     {
         public Node Root { get; set; }
 
-        public IEnumerable<int> PreOrder()
+        public IEnumerable<T> PreOrder()
         {
-            List<int> result = new List<int>();
+            List<T> result = new List<T>();
             PreOrder(result, Root);
             return result;
         }
        
-        private IEnumerable<int> PreOrder(List<int> result, Node root)
+        private IEnumerable<T> PreOrder(List<T> result, Node root)
         {
             if (root == null)
                 return result;
@@ -25,14 +25,14 @@ namespace DataStructures.Trees
             return result;
         }
 
-        public IEnumerable<int> InOrder()
+        public IEnumerable<T> InOrder()
         {
-            List<int> result = new List<int>();
+            List<T> result = new List<T>();
             InOrder(result, Root);
             return result;
         }
 
-        private IEnumerable<int> InOrder(List<int> result, Node root)
+        private IEnumerable<T> InOrder(List<T> result, Node root)
         {
             if (root.Left != null)           
                 InOrder(result, root.Left);
@@ -43,14 +43,14 @@ namespace DataStructures.Trees
             return result;
         }
 
-        public IEnumerable<int> PostOrder()
+        public IEnumerable<T> PostOrder()
         {
-            List<int> result = new List<int>();
+            List<T> result = new List<T>();
             PostOrder(result, Root);
             return result;
         }
 
-        private IEnumerable<int> PostOrder(List<int> result, Node root)
+        private IEnumerable<T> PostOrder(List<T> result, Node root)
         {
             if(root.Left != null)
             {
@@ -64,30 +64,34 @@ namespace DataStructures.Trees
             return result;
         }
 
-        public IEnumerable<int> BreadthFirst()
+        public IEnumerable<T> BreadthFirst()
         {
-            Queue<Node> queue = new Queue<Node>();
+            var queue = new Queue<Node>();
+            var queueResult = new Queue<Node>();
+
             queue.Enqueue(this.Root);
 
             while (queue.Count > 0)
             {
-                Node current = queue.Dequeue();
-                yield return current.Value;
+                var current = queue.Dequeue();
+                queueResult.Enqueue(current);
                 if (current == null)
                     continue;
                 queue.Enqueue(current.Left);
                 queue.Enqueue(current.Right);
             }
+            while (queue.Count > 0)
+                yield return queueResult.Dequeue().Value;
         }
 
         public class Node
         {
-            public Node(int value)
+            public Node(T value)
             {
                 Value = value;
             }
 
-            public int Value { get; set; }
+            public T Value { get; set; }
 
             public Node Left { get; set; }
 

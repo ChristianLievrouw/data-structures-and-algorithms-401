@@ -17,10 +17,8 @@ namespace DataStructures.Trees
         public Node Right { get; set; }
     }
 
-    public class BinarySearchTree : BinaryTree
+    public class BinarySearchTree : BinaryTree<int>
     {
-        //public Node Root { get; set; }
-
         public void Add(int value)
         {
             Node newNode = new Node(value);
