@@ -10,6 +10,8 @@
     <Folder Include="LinkLists\" />
     <Folder Include="QueueWithStacks\" />
     <Folder Include="FizzBizz\" />
+    <Folder Include="Sorts\" />
+    <Folder Include="Sorts\Assets\" />
   </ItemGroup>
 
   <ItemGroup>

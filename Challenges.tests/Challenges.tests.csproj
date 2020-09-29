@@ -20,5 +20,6 @@
     <Folder Include="arrays\" />
     <Folder Include="LinkedListTest\" />
     <Folder Include="QueueWithStacks\" />
+    <Folder Include="SortTests\" />
   </ItemGroup>
 </Project>
