@@ -4,7 +4,7 @@ Provide a visual step through for each of the sample arrays based on the provide
 On the first go through i is set to the length of the array passed in minus 1. Then the next line runs and sees if the 1st position in the array is less then the 0 position and if it is it swaps them and continues. Then the 2nd position is checked against the 1st if it is less then the second then it moves and checks position 0.
 
 ![Insertion Sort diagram](./Assets/InsertionSort.jpg)
-
+--------------------------------------------------------------------------------
 Merge Sort
 
 ALGORITHM Mergesort(arr)
@@ -67,3 +67,36 @@ ALGORITHM Merge(left, right, arr)
        set remaining entries in arr to remaining values in right
     else
        set remaining entries in arr to remaining values in left
+--------------------------------------------------------------------------------
+Quick sort
+
+ALGORITHM QuickSort(arr, left, right)
+    if left < right
+        // Partition the array by setting the position of the pivot value 
+        DEFINE position <-- Partition(arr, left, right)
+        // Sort the left
+        QuickSort(arr, left, position - 1)
+        // Sort the right
+        QuickSort(arr, position + 1, right)
+
+ALGORITHM Partition(arr, left, right)
+    // set a pivot value as a point of reference
+    DEFINE pivot <-- arr[right]
+    // create a variable to track the largest index of numbers lower than the defined pivot
+    DEFINE low <-- left - 1
+    for i <- left to right do
+        if arr[i] <= pivot
+            low++
+            Swap(arr, i, low)
+
+     // place the value of the pivot location in the middle.
+     // all numbers smaller than the pivot are on the left, larger on the right. 
+     Swap(arr, right, low + 1)
+    // return the pivot index point
+     return low + 1
+
+ALGORITHM Swap(arr, i, low)
+    DEFINE temp;
+    temp <-- arr[i]
+    arr[i] <-- arr[low]
+    arr[low] <-- temp
