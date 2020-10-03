@@ -7,7 +7,7 @@ namespace Challenges.Sorts
         {
             int[] leftArr;
             int[] rightArr;
-            int[] result = new int[arr.Length];
+            int[] result = new int[arr.Length - 1];
 
             if (arr.Length <= 1)
                 return arr;

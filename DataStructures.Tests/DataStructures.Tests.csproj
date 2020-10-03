@@ -20,5 +20,6 @@
   <ItemGroup>
     <Folder Include="StackTest\" />
     <Folder Include="TreesTests\" />
+    <Folder Include="HashTests\" />
   </ItemGroup>
 </Project>
