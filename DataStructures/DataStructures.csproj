@@ -7,5 +7,6 @@
   <ItemGroup>
     <Folder Include="Stack\" />
     <Folder Include="Trees\" />
+    <Folder Include="HashTable\" />
   </ItemGroup>
 </Project>

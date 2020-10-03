@@ -11,13 +11,13 @@ namespace Challenges.tests.SortTests
         public void Quick_sort_array()
         {
             // Arrange
-            int[] newArray = new[] { 23, 75, 101, 4, 45, 76, 99 };
+            int[] newArray = new[] { 23, 75, 4, 45, 76 };
 
             // Act
             int[] result = Quick.quickSort(newArray);
 
             //Assert
-            Assert.Equal(new int[] { 4, 23, 45, 75, 76, 99, 101 }, result);
+            Assert.Equal(new int[] { 4, 23, 45, 75, 76 }, result);
         }
     }
 }
