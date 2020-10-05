@@ -31,10 +31,14 @@ namespace DataStructures.HT
         public void Add(string key, TValue value)
         {
             int bucketNum = GetHash(key) % HashTable.Length;
-            var bucket = HashTable[bucketNum];
-
             LinkedListNode<TValue> newNode = new LinkedListNode<TValue>(value);
-            bucket.AddFirst(newNode);
+            if (HashTable[bucketNum] == null)
+            {
+                HashTable[bucketNum] = new LinkedList<TValue>();
+                HashTable[bucketNum].AddFirst(newNode);
+            }
+            else
+                HashTable[bucketNum].AddFirst(newNode);
         }
 
         public TValue HashFind(string key)
