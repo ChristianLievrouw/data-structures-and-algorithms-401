@@ -7,6 +7,7 @@ namespace DataStructures.HT
     public class HT<TValue>
     {
         LinkedList<TValue>[] HashTable = new LinkedList<TValue>[3];
+        //private TValue value;
 
         public static int GetHash(string key)
         {
@@ -31,10 +32,14 @@ namespace DataStructures.HT
         public void Add(string key, TValue value)
         {
             int bucketNum = GetHash(key) % HashTable.Length;
-            var bucket = HashTable[bucketNum];
-
             LinkedListNode<TValue> newNode = new LinkedListNode<TValue>(value);
-            bucket.AddFirst(newNode);
+            if (HashTable[bucketNum] == null)
+            {
+                HashTable[bucketNum] = new LinkedList<TValue>();
+                HashTable[bucketNum].AddFirst(newNode);
+            }
+            else
+                HashTable[bucketNum].AddFirst(newNode);
         }
 
         public TValue HashFind(string key)
@@ -46,6 +51,18 @@ namespace DataStructures.HT
                 throw new KeyNotFoundException();
             else
                 return HashTable[bucketNumber].First();
+        }
+
+        public bool Contains(string key, TValue value)
+        {
+            int hashNumber = GetHash(key);
+            int bucketNumber = hashNumber % HashTable.Length;
+            var bucket = HashTable[bucketNumber];
+
+            if (bucket.Contains(value))
+                return true;
+            else
+                return false;
         }
     }
 }
