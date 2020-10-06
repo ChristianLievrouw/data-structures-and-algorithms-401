@@ -7,7 +7,6 @@ namespace DataStructures.HT
     public class HT<TValue>
     {
         LinkedList<TValue>[] HashTable = new LinkedList<TValue>[3];
-        //private TValue value;
 
         public static int GetHash(string key)
         {

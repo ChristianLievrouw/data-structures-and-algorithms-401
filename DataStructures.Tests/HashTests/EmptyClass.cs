@@ -21,4 +21,12 @@ namespace DataStructures.Tests.HashTests
     //        Assert.Equal(expected, value);
     //    }
     //}
+    public class HashTests
+    {
+        [Fact]
+        public void Finding_same_numbers_in_two_trees()
+        {
+            
+        }
+    }
 }
