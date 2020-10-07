@@ -23,7 +23,7 @@ namespace DataStructures.Tests.HashTests
             // Make sure duplicate in tree2 does not show up
             tree2.Root.Right.Right = 4;
 
-            List<int> value = Intersection<int>.TreeIntersection(tree1, tree2);
+            List<int> value = Intersection.TreeIntersection(tree1, tree2);
             List<int> expected = new List<int>();
             expected.Add(1);
             expected.Add(2);
@@ -38,7 +38,7 @@ namespace DataStructures.Tests.HashTests
 
             var tree2 = new BinaryTree<int>();
 
-            var value = Intersection<int>.TreeIntersection(tree1, tree2);
+            var value = Intersection.TreeIntersection(tree1, tree2);
 
             var expected = new List<int>(); // No duplicates!
             Assert.Equal(expected, value);

@@ -3,7 +3,7 @@ using DataStructures.Trees;
 
 namespace DataStructures.HashTable
 {
-    public class Intersection<T>
+    public class Intersection
     {
         public static List<int> TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
         {
