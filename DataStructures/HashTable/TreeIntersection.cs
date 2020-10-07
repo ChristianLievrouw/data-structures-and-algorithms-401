@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DataStructures.Trees;
 
 namespace DataStructures.HashTable
 {
-    public class Intersection<T>
+    public class Intersection
     {
-        public static Dictionary<int, int> hashTable = new Dictionary<int, int>();
-
-        public static List<int> TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
+        public static List<T> TreeIntersection<T>(BinaryTree<T> tree1, BinaryTree<T> tree2)
         {
-            List<int> resultList = new List<int>();
+            var hashTable = new Dictionary<T, T>();
 
-            var list = tree1.BreadthFirst();
-            foreach(int num in list)
+            List<T> resultList = new List<T>();
+
+            var list = tree1.PreOrder();
+            foreach (T num in list)
             {
                 hashTable.Add(num, num);
             }
 
-            var list2 = tree2.BreadthFirst();
-            foreach(int num in list2)
+            var list2 = tree2.PreOrder();
+            foreach (T num in list2)
             {
-                if(hashTable.ContainsKey(num))
+                if (hashTable.ContainsKey(num))
                 {
                     resultList.Add(num);
-                }
-                else
-                {
-                    hashTable.Add(num, num);
                 }
             }
             return resultList;
