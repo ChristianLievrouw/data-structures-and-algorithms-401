@@ -5,20 +5,20 @@ namespace DataStructures.HashTable
 {
     public class Intersection
     {
-        public static List<int> TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
+        public static List<T> TreeIntersection<T>(BinaryTree<T> tree1, BinaryTree<T> tree2)
         {
-            var hashTable = new Dictionary<int, int>();
+            var hashTable = new Dictionary<T, T>();
 
-            List<int> resultList = new List<int>();
+            List<T> resultList = new List<T>();
 
             var list = tree1.PreOrder();
-            foreach (int num in list)
+            foreach (T num in list)
             {
                 hashTable.Add(num, num);
             }
 
             var list2 = tree2.PreOrder();
-            foreach (int num in list2)
+            foreach (T num in list2)
             {
                 if (hashTable.ContainsKey(num))
                 {

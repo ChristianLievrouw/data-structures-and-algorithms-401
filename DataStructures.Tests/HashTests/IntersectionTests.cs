@@ -43,5 +43,22 @@ namespace DataStructures.Tests.HashTests
             var expected = new List<int>(); // No duplicates!
             Assert.Equal(expected, value);
         }
+
+        [Fact]
+        public void Binary_tree_of_string()
+        {
+            var tree1 = new BinaryTree<string>();
+            tree1.Root = "hi";
+            tree1.Root.Left = "bye";
+
+            var tree2 = new BinaryTree<string>();
+            tree2.Root = "goodbye";
+            tree2.Root.Right = "hi";
+
+            var value = Intersection.TreeIntersection(tree1, tree2);
+
+            var expected = new List<string> { "hi" };
+            Assert.Equal(expected, value);
+        }
     }
 }
