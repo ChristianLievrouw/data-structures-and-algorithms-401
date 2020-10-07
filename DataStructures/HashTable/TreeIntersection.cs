@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DataStructures.Trees;
 
 namespace DataStructures.HashTable
 {
     public class Intersection<T>
     {
-        public static Dictionary<int, int> hashTable = new Dictionary<int, int>();
-
         public static List<int> TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
         {
+            var hashTable = new Dictionary<int, int>();
+
             List<int> resultList = new List<int>();
 
             var list = tree1.PreOrder();

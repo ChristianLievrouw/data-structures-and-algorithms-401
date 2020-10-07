@@ -29,5 +29,19 @@ namespace DataStructures.Tests.HashTests
             expected.Add(2);
             Assert.Equal(expected, value);
         }
+
+        [Fact]
+        public void Binary_tree_repeat_again()
+        {
+            var tree1 = new BinaryTree<int>();
+            tree1.Root = 4;
+
+            var tree2 = new BinaryTree<int>();
+
+            var value = Intersection<int>.TreeIntersection(tree1, tree2);
+
+            var expected = new List<int>(); // No duplicates!
+            Assert.Equal(expected, value);
+        }
     }
 }
