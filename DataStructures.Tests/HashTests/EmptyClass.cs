@@ -1,6 +1,9 @@
 ﻿using System;
-using DataStructures.HT;
 using Xunit;
+using DataStructures.HashTable;
+using DataStructures.Trees;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 
 namespace DataStructures.Tests.HashTests
 {
