@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DataStructures
+﻿namespace DataStructures.LinkedLists
 {
     public class Node
     {
@@ -12,7 +10,5 @@ namespace DataStructures
         public int Value { get; set; }
 
         public Node Next { get; set; }
-
-   
     }
 }

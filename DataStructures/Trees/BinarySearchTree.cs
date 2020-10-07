@@ -1,22 +1,5 @@
-﻿using System;
-
-
-namespace DataStructures.Trees
+﻿namespace DataStructures.Trees
 {
-    public class Node
-    {
-        public Node(int value)
-        {
-            Value = value;
-        }
-
-        public int Value { get; set; }
-
-        public Node Left { get; set; }
-
-        public Node Right { get; set; }
-    }
-
     public class BinarySearchTree : BinaryTree<int>
     {
         public void Add(int value)
@@ -87,5 +70,3 @@ namespace DataStructures.Trees
         }
     }
 }
-
-
