@@ -6,7 +6,7 @@ namespace DataStructures.HT
 {
     public class HT<TValue>
     {
-        LinkedList<TValue>[] HashTable = new LinkedList<TValue>[3];
+        public static LinkedList<TValue>[] HashTable = new LinkedList<TValue>[3];
 
         public static int GetHash(string key)
         {

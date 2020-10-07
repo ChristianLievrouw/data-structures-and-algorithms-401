@@ -6,9 +6,9 @@ namespace DataStructures.HashTable
 {
     public class Intersection<T>
     {
-        public Dictionary<int, int> hashTable = new Dictionary<int, int>();
+        public static Dictionary<int, int> hashTable = new Dictionary<int, int>();
 
-        public List<int> TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
+        public static List<int> TreeIntersection(BinaryTree<int> tree1, BinaryTree<int> tree2)
         {
             List<int> resultList = new List<int>();
 

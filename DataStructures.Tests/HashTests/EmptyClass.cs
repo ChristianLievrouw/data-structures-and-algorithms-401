@@ -1,6 +1,9 @@
 ﻿using System;
-using DataStructures.HT;
 using Xunit;
+using DataStructures.HashTable;
+using DataStructures.Trees;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 
 namespace DataStructures.Tests.HashTests
 {
@@ -21,12 +24,4 @@ namespace DataStructures.Tests.HashTests
     //        Assert.Equal(expected, value);
     //    }
     //}
-    public class HashTests
-    {
-        [Fact]
-        public void Finding_same_numbers_in_two_trees()
-        {
-            
-        }
-    }
 }
