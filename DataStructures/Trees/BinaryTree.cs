@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DataStructures.Trees
 {
@@ -14,7 +12,7 @@ namespace DataStructures.Trees
             PreOrder(result, Root);
             return result;
         }
-       
+
         private IEnumerable<T> PreOrder(List<T> result, Node root)
         {
             if (root == null)
@@ -34,7 +32,7 @@ namespace DataStructures.Trees
 
         private IEnumerable<T> InOrder(List<T> result, Node root)
         {
-            if (root.Left != null)           
+            if (root.Left != null)
                 InOrder(result, root.Left);
             result.Add(root.Value);
 
@@ -52,11 +50,11 @@ namespace DataStructures.Trees
 
         private IEnumerable<T> PostOrder(List<T> result, Node root)
         {
-            if(root.Left != null)
+            if (root.Left != null)
             {
                 PostOrder(result, root.Left);
             }
-            if(root.Right != null)
+            if (root.Right != null)
             {
                 PostOrder(result, root.Right);
                 result.Add(root.Value);
@@ -96,6 +94,11 @@ namespace DataStructures.Trees
             public Node Left { get; set; }
 
             public Node Right { get; set; }
+
+            public static implicit operator Node(T value)
+            {
+                return new Node(value);
+            }
         }
     }
 }
