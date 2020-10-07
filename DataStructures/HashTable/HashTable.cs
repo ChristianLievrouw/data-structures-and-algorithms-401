@@ -16,7 +16,7 @@ namespace DataStructures.HT
                 keyNumArr[i] = (int)key[i];
 
             int sum = 0;
-            foreach(int num in keyNumArr)
+            foreach (int num in keyNumArr)
             {
                 sum += num;
             }
