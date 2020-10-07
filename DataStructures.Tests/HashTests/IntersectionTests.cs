@@ -20,6 +20,9 @@ namespace DataStructures.Tests.HashTests
             tree2.Root.Left = 2;
             tree2.Root.Right = 4;
 
+            // Make sure duplicate in tree2 does not show up
+            tree2.Root.Right.Right = 4;
+
             List<int> value = Intersection<int>.TreeIntersection(tree1, tree2);
             List<int> expected = new List<int>();
             expected.Add(1);

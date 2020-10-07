@@ -12,22 +12,18 @@ namespace DataStructures.HashTable
         {
             List<int> resultList = new List<int>();
 
-            var list = tree1.BreadthFirst();
-            foreach(int num in list)
+            var list = tree1.PreOrder();
+            foreach (int num in list)
             {
                 hashTable.Add(num, num);
             }
 
-            var list2 = tree2.BreadthFirst();
-            foreach(int num in list2)
+            var list2 = tree2.PreOrder();
+            foreach (int num in list2)
             {
-                if(hashTable.ContainsKey(num))
+                if (hashTable.ContainsKey(num))
                 {
                     resultList.Add(num);
-                }
-                else
-                {
-                    hashTable.Add(num, num);
                 }
             }
             return resultList;
