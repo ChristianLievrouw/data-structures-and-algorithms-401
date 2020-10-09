@@ -8,5 +8,6 @@
     <Folder Include="Stack\" />
     <Folder Include="Trees\" />
     <Folder Include="HashTable\" />
+    <Folder Include="Graphs\" />
   </ItemGroup>
 </Project>
